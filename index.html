@@ -16,14 +16,7 @@
 			height:100%;
             font-size: 85%;
             margin: 0;
-			position:fixed;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-   background-size: cover;//这条一定要
-			
+	
 			
 		
 		
@@ -51,11 +44,24 @@
         .timer b {
             color: rgb(253, 99, 125);
         }
+		.imgBg{
+		 position: absolute;
+		height:100%;
+		width:100%;
+				background-attachment: fixed;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+   background-size: cover; //这条一定要
+			
+			}
     </style>
 </head>
 
-<body id="b" >
-    <div class="content">
+<body >
+<div  class="imgBg"   id="all">
+    <div class="content" >
         <h2>郑文琦，很高兴遇见你</h2>
         <div class="timer">
             <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
@@ -76,9 +82,10 @@
 		<embed autoplay="true" src="https://ydschool-video.nosdn.127.net/15221349361842018032101.mp3" width="1" height="1" />
 
     </div>
+	</div>
     <script>
 			var img="url(0.jpg)";
-	       document.body.style.backgroundImage=img;//改变背景图片 
+	       document.getElementById("all").style.backgroundImage=img;//改变背景图片 
         function timer() {
             var start = new Date(1535170020000); // 2015.7.2
             var t = new Date() - start;
@@ -115,7 +122,7 @@
 		function setImg(){
 		  	var num=parseInt(Math.random()*13);
 			var img="url("+imgs[num].src+")";
-	        document.body.style.backgroundImage=img;//改变背景图片 
+	        document.getElementById("all").style.backgroundImage=img;//改变背景图片 
 		}
 		function change(){
 		console.info("init change>>>>>>")
