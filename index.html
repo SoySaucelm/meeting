@@ -12,7 +12,7 @@
         body {
             -webkit-font-smoothing: antialiased;
             font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background-image: url('bg.jpg');
+            background-size:cover;
             font-size: 85%;
             margin: 0;
         }
@@ -34,7 +34,7 @@
             font-size: 180%;
             line-height: 1.5;
             margin: 1em 0;
-        }
+        }	
         
         .timer b {
             color: rgb(253, 99, 125);
@@ -42,7 +42,7 @@
     </style>
 </head>
 
-<body>
+<body id="b" >
     <div class="content">
         <h2>郑文琦，很高兴遇见你</h2>
         <div class="timer">
@@ -71,9 +71,17 @@
             document.getElementById('h').innerHTML = h;
             document.getElementById('m').innerHTML = m;
             document.getElementById('s').innerHTML = s;
+		
         }
+		function setImg(){
+		  	var num=parseInt(Math.random()*13);
+			var text="url("+num+".jpg)";
+	        document.body.style.backgroundImage=text;//改变背景图片 
+		}
         timer();
+		setImg();
         setInterval(timer, 1000);
+		setInterval(setImg,3000)
     </script>
 </body>
 
